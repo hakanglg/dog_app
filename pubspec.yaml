@@ -13,15 +13,18 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
+  equatable: ^2.0.5
 
-#ROUTE
-  auto_route: ^9.2.2
-#STATE MANAGEMENT
+# Utility
+  kartal: ^3.5.0
+# ROUTE
+  auto_route: ^9.2.0
+# STATE MANAGEMENT
   bloc: ^8.1.4
   flutter_bloc: ^8.1.6
 
   json_annotation: ^4.9.0
-
+# Network
   dio: ^5.7.0
 
 dev_dependencies:
@@ -36,6 +39,7 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   build_runner: ^2.4.12
   json_serializable: ^6.8.0
+  auto_route_generator: ^9.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
