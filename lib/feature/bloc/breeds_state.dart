@@ -1,8 +1,8 @@
-import 'package:equatable/equatable.dart';
+part of 'breeds_bloc.dart';
 
 abstract class BreedsState extends Equatable {
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 class BreedsInitial extends BreedsState {}
@@ -10,19 +10,19 @@ class BreedsInitial extends BreedsState {}
 class BreedsLoading extends BreedsState {}
 
 class BreedsLoaded extends BreedsState {
-  final Map<String, dynamic> breeds;
+  final List<Breed> breeds;
 
-  BreedsLoaded(this.breeds);
+  BreedsLoaded({required this.breeds});
 
   @override
-  List<Object> get props => [breeds];
+  List<Object?> get props => [breeds];
 }
 
 class BreedsError extends BreedsState {
   final String message;
 
-  BreedsError(this.message);
+  BreedsError({required this.message});
 
   @override
-  List<Object> get props => [message];
+  List<Object?> get props => [message];
 }

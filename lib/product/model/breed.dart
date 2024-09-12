@@ -4,14 +4,16 @@ part 'breed.g.dart'; // Bu kısım modelinizin otomatik olarak üretilen dosyas�
 
 @JsonSerializable()
 class Breed {
-  final String breed;
-  final List<String> subBreeds;
+  final String? breed;
+  final List<String>? subBreeds;
+  final String? imageUrl;
 
-  Breed({required this.breed, required this.subBreeds});
+  Breed({
+    required this.breed,
+    required this.subBreeds,
+    this.imageUrl = "",
+  });
 
-  // JSON'dan nesneye dönüştürme metodu
   factory Breed.fromJson(Map<String, dynamic> json) => _$BreedFromJson(json);
-
-  // Nesneden JSON'a dönüştürme metodu
   Map<String, dynamic> toJson() => _$BreedToJson(this);
 }

@@ -1,8 +1,19 @@
-import 'package:equatable/equatable.dart';
+part of 'breeds_bloc.dart';
 
 abstract class BreedsEvent extends Equatable {
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-class FetchBreeds extends BreedsEvent {}
+class LoadAllBreeds extends BreedsEvent {}
+
+class SearchBreeds extends BreedsEvent {
+  final String query;
+
+  SearchBreeds(this.query);
+
+  @override
+  List<Object?> get props => [query];
+}
+
+class BreedsNoResults extends BreedsState {}
