@@ -39,12 +39,6 @@ class MyApp extends StatelessWidget {
           theme: projectTheme,
           debugShowCheckedModeBanner: false,
           routerConfig: _appRouter.config(),
-          // home: BlocBuilder<LoginBloc, LoginState>(
-          //   builder: (context, state) {
-          //
-          //     return LoginPage();
-          //   },
-          // ),
         ));
   }
 }

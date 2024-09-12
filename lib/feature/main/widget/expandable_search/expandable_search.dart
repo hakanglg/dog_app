@@ -5,73 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
 
+part 'expandable_search_mixin.dart';
 
 class ExpandableSearchField extends StatefulWidget {
   final Function(String) onSearch;
 
-  const ExpandableSearchField({Key? key, required this.onSearch}) : super(key: key);
+  const ExpandableSearchField({super.key, required this.onSearch});
 
   @override
   _ExpandableSearchFieldState createState() => _ExpandableSearchFieldState();
 }
 
-class _ExpandableSearchFieldState extends State<ExpandableSearchField> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-  bool _isExpanded = false;
-  bool _isFullyExpanded = false;
-  final FocusNode _focusNode = FocusNode();
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      duration: const Duration(milliseconds: 300),
-      vsync: this,
-    );
-    _animation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOut,
-    );
-
-    _focusNode.addListener(() {
-      if (_focusNode.hasFocus && !_isExpanded) {
-        _expandToHalf();
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    _focusNode.dispose();
-    super.dispose();
-  }
-
-  void _expandToHalf() {
-    setState(() {
-      _isExpanded = true;
-      _isFullyExpanded = false;
-      _controller.animateTo(0.5);
-    });
-  }
-
-  void _expandToFull() {
-    setState(() {
-      _isFullyExpanded = true;
-      _controller.forward();
-    });
-  }
-
-  void _collapse() {
-    setState(() {
-      _isExpanded = false;
-      _isFullyExpanded = false;
-      _controller.reverse();
-      _focusNode.unfocus();
-    });
-  }
-
+class _ExpandableSearchFieldState extends State<ExpandableSearchField>
+    with SingleTickerProviderStateMixin, _ExpandableSearchFieldMixin {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -98,6 +44,16 @@ class _ExpandableSearchFieldState extends State<ExpandableSearchField> with Sing
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(ProjectRadius.medium.value),
+                boxShadow: !_isExpanded
+                    ? [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(.5),
+                          blurRadius: 5.0,
+                          spreadRadius: 0.0,
+                          offset: Offset(0.0, 2.0), // Adjust for bottom shadow
+                        ),
+                      ]
+                    : null,
               ),
               child: Column(
                 children: [
@@ -118,9 +74,7 @@ class _ExpandableSearchFieldState extends State<ExpandableSearchField> with Sing
                                       hintText: 'Search',
                                       border: InputBorder.none,
                                     ),
-                                    onChanged: (value) {
-                                      context.read<BreedsBloc>().add(SearchBreeds(value)); // BLoC'a arama sorgusu gönderiliyor
-                                    },
+                                    onChanged: widget.onSearch,
                                     onSubmitted: (value) {
                                       _collapse();
                                     },

@@ -21,6 +21,8 @@ bottomNavigationBarTheme:     const BottomNavigationBarThemeData(
     selectedItemColor: CupertinoColors.systemBlue,
     unselectedIconTheme: IconThemeData(color: CupertinoColors.label),
     unselectedItemColor: CupertinoColors.label,
+    selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+    unselectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
 ),
     // APPBAR
     appBarTheme: const AppBarTheme(

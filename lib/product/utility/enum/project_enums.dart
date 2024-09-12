@@ -9,7 +9,10 @@ enum ProjectRadius {
   normal(12),
 
   /// 16.
-  large(16);
+  large(16),
+
+  /// 50.
+  xLarge(100);
 
   final double value;
   const ProjectRadius(this.value);
