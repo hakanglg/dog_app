@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
               create: (BuildContext context) => BreedsBloc(dogRepository: dogRepository)..add(LoadAllBreeds())),
         ],
         child: MaterialApp.router(
-          title: 'Dog App',
+          title: ApplicationConstants.appName,
           theme: projectTheme,
           debugShowCheckedModeBanner: false,
           routerConfig: _appRouter.config(),

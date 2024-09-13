@@ -10,11 +10,10 @@ import 'package:dogapp/product/widget/bottom_nav_bar/project_bottom_navigation.d
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kartal/kartal.dart';
 
 @RoutePage()
-class MainScreen extends StatelessWidget {
+final class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override

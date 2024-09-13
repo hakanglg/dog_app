@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'breed.g.dart'; // Bu kısım modelinizin otomatik olarak üretilen dosyası için gerekli
+part 'breed.g.dart';
 
 @JsonSerializable()
 class Breed {

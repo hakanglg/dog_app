@@ -3,7 +3,6 @@ import 'package:dogapp/product/utility/constants/app_constants.dart';
 
 enum LottieAnimation {
   splash,
-
 }
 
 extension LottieAnimationExtension on LottieAnimation {
@@ -11,11 +10,8 @@ extension LottieAnimationExtension on LottieAnimation {
     switch (this) {
       case LottieAnimation.splash:
         return 'splash';
-
     }
   }
 
   String get path => '${ApplicationConstants.LOTTIE_ASSET_PATH}/lottie_${_path()}.json';
 }
-
-

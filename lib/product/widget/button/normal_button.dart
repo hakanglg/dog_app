@@ -2,7 +2,6 @@ import 'package:dogapp/product/utility/enum/project_enums.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:kartal/kartal.dart';
 
-/// radius is 32
 final class NormalButton extends StatelessWidget {
 
   const NormalButton(

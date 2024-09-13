@@ -11,13 +11,8 @@ class AppRouter extends RootStackRouter {
 
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(page: SplashRoute.page, initial: true),
-    AutoRoute(page: MainRoute.page),
-    CustomRoute(
-      page: SettingsRoute.page,
-      fullscreenDialog: true,
-      // transitionsBuilder: TransitionsBuilders.slideBottom, // Aşağıdan yukarıya geçiş animasyonu
-      // durationInMilliseconds: 300,
-    ),
-  ];
+        AutoRoute(page: SplashRoute.page, initial: true),
+        AutoRoute(page: MainRoute.page),
+        CustomRoute(page: SettingsRoute.page, fullscreenDialog: true),
+      ];
 }

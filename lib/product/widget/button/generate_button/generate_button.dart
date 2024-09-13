@@ -8,8 +8,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
-part 'generate_button_mixin.dart';
 
+part 'generate_button_mixin.dart';
 final class GenerateButton extends StatefulWidget {
   const GenerateButton({super.key, this.breed});
 
@@ -21,6 +21,8 @@ final class GenerateButton extends StatefulWidget {
 
 class _GenerateButtonState extends State<GenerateButton>
     with MountedMixin, _GenerateButtonMixin {
+  final String title = 'Generate';
+
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
@@ -30,7 +32,7 @@ class _GenerateButtonState extends State<GenerateButton>
             return const CircularProgressIndicator.adaptive();
           } else {
             return NormalButton(
-              title: 'Generate',
+              title: title,
               onPressed: () async {
                 await _onPressed(context);
               },

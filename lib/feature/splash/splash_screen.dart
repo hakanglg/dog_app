@@ -21,7 +21,6 @@ class SplashScreen extends StatelessWidget {
       child: Scaffold(
         body: BlocBuilder<BreedsBloc, BreedsState>(
           builder: (context, state) {
-
             if (state is BreedsError) {
               return Center(
                 child: Column(
@@ -33,7 +32,6 @@ class SplashScreen extends StatelessWidget {
                 ),
               );
             }
-
             if (state is BreedsInitial || state is BreedsLoading) {
               return const Center(
                 child: LottieWidget(lottie: LottieAnimation.splash),

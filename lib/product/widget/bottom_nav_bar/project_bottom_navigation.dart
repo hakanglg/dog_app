@@ -1,7 +1,5 @@
-import 'package:dogapp/feature/dog_detail/dog_detail_view.dart';
 import 'package:dogapp/feature/settings/settings_screen.dart';
 import 'package:dogapp/product/utility/enum/image_enum.dart';
-import 'package:dogapp/product/utility/enum/project_enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kartal/kartal.dart';

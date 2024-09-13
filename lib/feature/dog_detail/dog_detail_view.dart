@@ -1,16 +1,13 @@
-import 'package:dogapp/feature/bloc/breeds_bloc.dart';
-import 'package:dogapp/feature/main/main_screen.dart';
 import 'package:dogapp/product/utility/enum/project_enums.dart';
 import 'package:dogapp/product/widget/button/generate_button/generate_button.dart';
 import 'package:dogapp/product/widget/divider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dogapp/product/model/breed.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
 import 'package:dogapp/product/utility/extension/string_extension.dart';
 
-class DogDetailPreview extends StatelessWidget {
+final class DogDetailPreview extends StatelessWidget {
   final Breed item;
 
   const DogDetailPreview({
@@ -18,13 +15,16 @@ class DogDetailPreview extends StatelessWidget {
     required this.item,
   });
 
+
+  final String _breedTitle = 'Breed';
+  final String _subBreedSubtitle = 'Sub Breeds';
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: CupertinoColors.systemBackground,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(ProjectRadius.medium.value),
-      ),
+          borderRadius: BorderRadius.circular(ProjectRadius.medium.value)),
       child: SizedBox(
         width: double.infinity,
         height: context.sized.dynamicHeight(0.75),
@@ -63,11 +63,11 @@ class DogDetailPreview extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           context.sized.emptySizedHeightBoxLow,
-          _buildSectionTitle(context, 'Breed'),
+          _buildSectionTitle(context, _breedTitle),
           _buildPaddingDivider(context),
           _buildDetailText(item.breed?.capitalizeFirstLetter() ?? "", context),
           context.sized.emptySizedHeightBoxLow,
-          _buildSectionTitle(context, 'Sub-Breed'),
+          _buildSectionTitle(context, _subBreedSubtitle),
           _buildPaddingDivider(context),
           _buildSubBreedsList(context),
         ],
@@ -119,7 +119,6 @@ class DogDetailPreview extends StatelessWidget {
       padding: context.padding.low,
       child: GenerateButton(
         breed: item.breed,
-
       ),
     );
   }
