@@ -27,4 +27,5 @@
 
 | Settings     | Search    | Expanded Search |
 |---------------------|---------------------|----------------------------|
-| ![settings](https://github.com/user-attachments/assets/02ced94c-5c60-4ac0-8648-6ed4d04052d6) | ![search](https://github.com/user-attachments/assets/c987a366-1986-47c9-b114-8f05389e09d0) | ![expanded_search](https://github.com/user-attachments/assets/35e4c7ed-725a-426c-9523-a749b65b7a3f) |
+| ![settings](https://github.com/user-attachments/assets/02ced94c-5c60-4ac0-8648-6ed4d04052d6) | ![search](https://github.com/user-attachments/assets/8dcb2a02-982b-4321-a2f2-49ebbb7bb68e) | ![expanded_search](https://github.com/user-attachments/assets/35e4c7ed-725a-426c-9523-a749b65b7a3f) |
+
